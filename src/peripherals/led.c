@@ -8,6 +8,7 @@
 void led_Init( void ) {
 	GPIO_InitTypeDef  GPIO_InitStruct;
 
+	__HAL_RCC_GPIOA_CLK_ENABLE();
 	GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
 	GPIO_InitStruct.Pull  = GPIO_PULLUP;
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
@@ -19,3 +20,4 @@ void led_Init( void ) {
 void led_Toggle( void ) {
 	HAL_GPIO_TogglePin( LED_PORT, LED_PIN );
 }
+
